@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import ChatList from '../../../components/menu/list/chat/index';
+import ChatList from '../../../components/menu/list/chat/list';
 import MenuWrapper from './styled';
 
 const Menu = memo(() => (
