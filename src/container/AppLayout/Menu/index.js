@@ -1,13 +1,12 @@
 import React, { memo } from 'react';
 import ChatList from '../../../components/menu/list/chat/list';
+import Header from '../../../components/menu/common/header';
 import MenuWrapper from './styled';
 
 const Menu = memo(() => (
   <MenuWrapper>
     <div>
-      <div>
-        <span>menu!</span>
-      </div>
+      <Header/>
       <ChatList/>
     </div>
   </MenuWrapper>
