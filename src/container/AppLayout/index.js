@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import Menu from "./Menu/index";
 import Footer from "./Footer/index";
 
-const AppLayout = ({children})  => {
+const AppLayout = memo(({children})  => {
   return (
     <>
       <Menu/>
@@ -10,6 +10,6 @@ const AppLayout = ({children})  => {
       <Footer/>
     </>
   );
-};
+});
 
 export default AppLayout;
