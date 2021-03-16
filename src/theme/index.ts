@@ -1,5 +1,4 @@
 /* 공통 적용 색 */
-
 const theme = {
   PRIMARY_COLOR: '#272343',
   BACKGROUND_COLOR: '#f0f2f5',

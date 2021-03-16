@@ -1,5 +1,5 @@
 /* 회원가입 관련 정규식 */
-
+/* eslint-disable no-useless-escape */
 export default {
   signUp: {
     id: /^[a-z0-9_\-]{5,10}$/,
