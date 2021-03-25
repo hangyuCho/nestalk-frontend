@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nestalk</title>
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/list-chat.css">
+</head>
+
+<body>
+  <div class="container">
+    <!--(Common)Header -->
+    <header>
+      <!-- Screen header -->
+      <div class="screen-header">
+        <h1 class="screen-header__title">채팅</h1>
+        <div class="screen-header__icons">
+          <button type="button" class="screen-header__icon">
+            <img src="./image/icon/search-24px.svg" alt="search button">
+          </button>
+          <button type="button" class="screen-header__icon">
+            <img src="./image/icon/add_comment-24px.svg" alt="add comment button">
+          </button>
+          <button type="button" class="screen-header__icon">
+            <img src="./image/icon/settings-24px.svg" alt="setting button">
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav-list">
+        <button type="button" class="nav__button">
+          <img src="./image/icon/perm_identity-24px.svg" alt="friend list button">
+        </button>
+        <button type="button" class="nav__button">
+          <img src="./image/icon/chat_bubble-24px.svg" alt="chat list button">
+        </button>
+      </nav>
+    </header>
+
+    <!-- Screen Main -->
+    <main class="screen-main">
+      <!-- Chat list -->
+      <div class="user-chat-list">
+        <button class="user-chat-item">
+          <div class="user-chat__column">
+            <!-- Friend profile photo -->
+            <img src="#" alt="friend profile photo" class="user-chat__photo" />
+            <div class="user-chat__text">
+              <h4 class="user-chat__title">Friend</h4>
+              <h6 class="user-chat__content">
+                Lorem ipsum dolor adipisicing elit.
+              </h6>
+            </div>
+          </div>
+          <div class="user-chat__column">
+            <span class="user-chat__time">11:00</span>
+            <div class="notice">1</div>
+          </div>
+        </button>
+        <!-- Group chat -->
+        <button class="user-chat-item">
+          <div class="user-chat__column">
+            <div class="user-chat__group">
+              <!-- Friends profile photo -->
+              <img src="#" alt="friend profile photo" class="user-chat__photo group" />
+              <img src="#" alt="friend profile photo" class="user-chat__photo group" />
+              <img src="#" alt="friend profile photo" class="user-chat__photo group" />
+              <img src="#" alt="friend profile photo" class="user-chat__photo group" />
+            </div>
+
+            <div class="user-chat__text">
+              <h4 class="user-chat__title">Friend, Friend,Friend <span class="user-chat__group--num">4</span></h4>
+              <h6 class="user-chat__content">
+                Lorem ipsum dolor adipisicing elit.
+              </h6>
+            </div>
+          </div>
+          <div class="user-chat__column">
+            <span class="user-chat__time">11:00</span>
+            <div class="notice">1</div>
+          </div>
+        </button>
+
+      </div>
+    </main>
+  </div>
+
+
+
+  </div>
+</body>
+
+</html>

@@ -19,6 +19,8 @@ input:active {
   outline: none;
   background-color: transparent;
   font-family: inherit;
+  font-size: inherit;
+  text-align: inherit;
   color: inherit;
   cursor: pointer;
 }
