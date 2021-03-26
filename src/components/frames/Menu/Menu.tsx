@@ -8,6 +8,7 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({ roomList, logout }) => {
+  console.log(roomList);
   const onLogout = useCallback(() => {
     //소켓연결 제거
     logout();
@@ -23,7 +24,7 @@ const Menu: React.FC<Props> = ({ roomList, logout }) => {
           <li title="chat">채팅</li>
         </MenuItem>
         <MenuItem onClick={onLogout}>
-          <li title="logout">로그아웃</li>
+          <li title="logout">logout</li>
         </MenuItem>
       </ul>
     </MenuLayout>

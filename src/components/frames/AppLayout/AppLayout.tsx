@@ -1,47 +1,31 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Menu from '../Menu';
 import MainLayout from './styled';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@src/reducers/';
 
 interface Props {
   children: React.ReactNode;
 }
 
-const AppLayout = ({ children }: Props) => {
+const AppLayout = memo(({ children }: Props) => {
+  const { roomListInfo } = useSelector((state: RootState) => state.chat); //menu에서 room에대한 정보를 요청할 때 필요
+
   const isLoggined = true;
-  const dumyRoomList = [
-    {
-      room_id: 1,
-      room_name: 'kyungmin',
-      type: 'individualChat',
-      participant: [1, 2],
-      last_chat: '확인 바랍니다',
-      not_read_chat: 3,
-      updatedAt: new Date(),
-    },
-    {
-      room_id: 2,
-      room_name: 'hyojin',
-      type: 'individualChat',
-      participant: [1, 3, 4],
-      last_chat: '테스트 입니다',
-      not_read_chat: 1,
-      updatedAt: new Date(),
-    },
-  ];
   const logout = () => {};
 
   if (!isLoggined) {
-    //loginpage redirect
+    //loginPage redirect
   }
 
   return (
     <>
       <MainLayout>
-        <Menu roomList={dumyRoomList} logout={logout} />
+        <Menu roomList={roomListInfo} logout={logout} />
         {children}
       </MainLayout>
     </>
   );
-};
+});
 
 export default AppLayout;
