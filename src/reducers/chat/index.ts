@@ -4,7 +4,7 @@ import { chatRoomType, CHATTING_ROOM_LIST_SUBMIT, CHATTING_ROOM_ADD_SUBMIT } fro
 import { RoomList, CHATTING_LIST_REQUEST, CHATTING_LIST_SUCCESS, CHATTING_LIST_FAILURE } from './roomList';
 import { RoomAdd, CHATTING_ROOM_ADD_REQUEST, CHATTING_ROOM_ADD_SUCCESS, CHATTING_ROOM_ADD_FAILURE } from './roomAdd';
 
-const dumyRoomList = [
+export const dumyRoomList = [
   {
     room_id: 1,
     room_name: 'kyungmin',
@@ -35,7 +35,7 @@ export interface ChatRoomInitialState {
 }
 
 const initialState: ChatRoomInitialState = {
-  roomListInfo: null,
+  roomListInfo: [],
   isLoading: {
     id: null,
     name: null,
@@ -54,7 +54,8 @@ const chat = (state: ChatRoomInitialState = initialState, action: ReducerAction)
       case CHATTING_LIST_SUCCESS:
         status.isLoading.id = null;
         status.isLoading.name = null;
-        status.roomListInfo = dumyRoomList;
+        //roomListInfo 초기화 이후 push 작성하기
+        status.roomListInfo.push(action.data);
         break;
       case CHATTING_LIST_FAILURE:
         status.isLoading.id = null;

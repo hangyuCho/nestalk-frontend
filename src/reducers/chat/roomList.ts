@@ -7,7 +7,7 @@ export const CHATTING_LIST_FAILURE = 'CHATTING_LIST_FAILURE' as const;
 
 export interface RoomListRequest {
   type: typeof CHATTING_LIST_REQUEST;
-  data: string;
+  data: number;
 }
 
 export interface RoomListSuccess {
@@ -21,19 +21,19 @@ export interface RoomListFailure {
 }
 
 //roomListRequest
-export const roomListRequest = (data: string) => ({
+export const roomListRequest = (data: number): RoomListRequest => ({
   type: CHATTING_LIST_REQUEST,
   data,
 });
 
 //roomListSuccess
-export const roomListSuccess = (data: RoomListData) => ({
+export const roomListSuccess = (data: RoomListData): RoomListSuccess => ({
   type: CHATTING_LIST_SUCCESS,
   data,
 });
 
 //roomListFailure
-export const roomListFailure = (error: string) => ({
+export const roomListFailure = (error: string): RoomListFailure => ({
   type: CHATTING_LIST_FAILURE,
   error,
 });

@@ -20,18 +20,18 @@ export interface RoomAddFailure {
 }
 
 //roomListRequest
-export const roomAddRequest = (data: CreateRoomData) => ({
+export const roomAddRequest = (data: CreateRoomData): RoomAddRequest => ({
   type: CHATTING_ROOM_ADD_REQUEST,
   data,
 });
 
 //roomListSuccess
-export const roomAddSuccess = () => ({
+export const roomAddSuccess = (): RoomAddSuccess => ({
   type: CHATTING_ROOM_ADD_SUCCESS,
 });
 
 //roomListFailure
-export const roomAddFailure = (error: string) => ({
+export const roomAddFailure = (error: string): RoomAddFailure => ({
   type: CHATTING_ROOM_ADD_FAILURE,
   error,
 });

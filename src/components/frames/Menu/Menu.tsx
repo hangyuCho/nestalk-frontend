@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({ roomList, logout }) => {
-  console.log(roomList);
   const onLogout = useCallback(() => {
     //소켓연결 제거
     logout();
