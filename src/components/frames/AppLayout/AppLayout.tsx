@@ -22,7 +22,7 @@ const AppLayout = memo(({ children }: Props) => {
       //loginPage redirect
       Router.push('/');
     } else {
-      dispatch(roomListRequest(1));
+      dispatch(roomListRequest(1)); //현재 로그인한 계정 id로 요청
     }
   }, [info]);
 

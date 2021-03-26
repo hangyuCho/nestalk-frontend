@@ -15,7 +15,9 @@ export const MenuLayout = styled.aside`
     text-align: center;
     font-size: 25px;
     color: #a6a7a8;
+    cursor: pointer;
     &:hover {
+      font-size: 50px;
       color: #888777;
     }
   }
@@ -23,7 +25,8 @@ export const MenuLayout = styled.aside`
 
 export const MenuItem = styled.div`
   display: inline-block;
-
+  margin-top: 20px;
+  width: 100%;
   &:active {
     & li {
       color: black;

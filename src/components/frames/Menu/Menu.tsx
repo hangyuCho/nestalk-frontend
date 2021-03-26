@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
 import { MenuLayout, MenuItem } from './styled';
 import { RoomListData } from '@src/types/chatting';
+import { faUser, faComment, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Props {
   roomList: Array<RoomListData>;
@@ -17,13 +19,21 @@ const Menu: React.FC<Props> = ({ roomList, logout }) => {
     <MenuLayout>
       <ul>
         <MenuItem>
-          <li title="friend">친구</li>
+          <li title="친구목록">
+            <FontAwesomeIcon icon={faUser} />
+            {/* 클릭 시 친구목록 컴포넌트 */}
+          </li>
         </MenuItem>
         <MenuItem>
-          <li title="chat">채팅</li>
+          <li title="채팅목록">
+            <FontAwesomeIcon icon={faComment} />
+            {/* 클릭 시 채팅목록 컴포넌트 */}
+          </li>
         </MenuItem>
         <MenuItem onClick={onLogout}>
-          <li title="logout">logout</li>
+          <li title="로그아웃" onClick={onLogout}>
+            <FontAwesomeIcon icon={faSignOutAlt} />
+          </li>
         </MenuItem>
       </ul>
     </MenuLayout>
