@@ -12,9 +12,8 @@ li {
 
 button,
 button:active,
-input,
-input:focus,
-input:active {
+fieldset, select,
+input {
   border: none;
   outline: none;
   background-color: transparent;
