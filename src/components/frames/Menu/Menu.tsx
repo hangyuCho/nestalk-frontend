@@ -1,15 +1,16 @@
 import React, { useCallback } from 'react';
 import { MenuLayout, MenuItem } from './styled';
-import { RoomListData } from '@src/types/chatting';
 import { faUser, faComment, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface Props {
+import { RoomListData } from '@src/types/chatting';
+
+interface MenuProps {
   roomList: Array<RoomListData>;
   logout: () => void;
 }
 
-const Menu: React.FC<Props> = ({ roomList, logout }) => {
+const Menu: React.FC<MenuProps> = ({ roomList, logout }) => {
   const onLogout = useCallback(() => {
     //소켓연결 제거
     logout();

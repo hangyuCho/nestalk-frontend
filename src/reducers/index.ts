@@ -9,7 +9,7 @@ export interface RootState {
 }
 
 //생성된 reducer Input
-const rootReducer = (state: any, action) => {
+const rootReducer = (state: RootState, action) => {
   switch (action.type) {
     case HYDRATE:
       return action.payload;

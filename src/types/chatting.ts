@@ -5,7 +5,7 @@ export interface RoomListData {
   room_id: number;
   room_name: string;
   type: ChatType | string;
-  participant: Array<number>; //참여자 id를 받아옴
+  participant: number[]; //참여자 id를 받아옴
   last_chat: string;
   not_read_chat: number;
   updatedAt: Date;
@@ -16,5 +16,5 @@ export interface CreateRoomData {
   my_id?: number;
   room_name: string;
   type: ChatType;
-  participant: Array<number>;
+  participant: number[];
 }
