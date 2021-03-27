@@ -1,7 +1,12 @@
 import produce from 'immer';
 import { RoomListData } from '@src/types/chatting';
 import { chatRoomType, CHATTING_ROOM_LIST_SUBMIT, CHATTING_ROOM_ADD_SUBMIT } from '../loadingType';
-import { RoomList, CHATTING_LIST_REQUEST, CHATTING_LIST_SUCCESS, CHATTING_LIST_FAILURE } from './roomList';
+import {
+  RoomList,
+  LOAD_CHATTING_LIST_REQUEST,
+  LOAD_CHATTING_LIST_SUCCESS,
+  LOAD_CHATTING_LIST_FAILURE,
+} from './roomList';
 import { RoomAdd, CHATTING_ROOM_ADD_REQUEST, CHATTING_ROOM_ADD_SUCCESS, CHATTING_ROOM_ADD_FAILURE } from './roomAdd';
 
 export const dumyRoomList = [
@@ -45,31 +50,31 @@ const initialState: ChatRoomInitialState = {
 type ReducerAction = RoomList | RoomAdd;
 
 const chat = (state: ChatRoomInitialState = initialState, action: ReducerAction) =>
-  produce(state, (status: ChatRoomInitialState) => {
+  produce(state, (draft: ChatRoomInitialState) => {
     switch (action.type) {
       //chatting room list
-      case CHATTING_LIST_REQUEST:
-        status.isLoading.name = CHATTING_ROOM_LIST_SUBMIT;
+      case LOAD_CHATTING_LIST_REQUEST:
+        draft.isLoading.name = CHATTING_ROOM_LIST_SUBMIT;
         break;
-      case CHATTING_LIST_SUCCESS:
-        status.isLoading.id = null;
-        status.isLoading.name = null;
+      case LOAD_CHATTING_LIST_SUCCESS:
+        draft.isLoading.id = null;
+        draft.isLoading.name = null;
         //roomListInfo 초기화 이후 push 작성하기
-        status.roomListInfo.push(action.data);
+        draft.roomListInfo.push(action.data);
         break;
-      case CHATTING_LIST_FAILURE:
-        status.isLoading.id = null;
-        status.isLoading.name = null;
+      case LOAD_CHATTING_LIST_FAILURE:
+        draft.isLoading.id = null;
+        draft.isLoading.name = null;
         break;
 
       //chatting room add
       case CHATTING_ROOM_ADD_REQUEST:
-        status.isLoading.name = CHATTING_ROOM_ADD_SUBMIT;
+        draft.isLoading.name = CHATTING_ROOM_ADD_SUBMIT;
         break;
       case CHATTING_ROOM_ADD_SUCCESS:
       case CHATTING_ROOM_ADD_FAILURE:
-        status.isLoading.id = null;
-        status.isLoading.name = null;
+        draft.isLoading.id = null;
+        draft.isLoading.name = null;
         break;
     }
   });

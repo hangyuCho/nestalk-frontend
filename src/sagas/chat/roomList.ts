@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { takeLatest, put, call, delay } from 'redux-saga/effects';
 import {
-  CHATTING_LIST_REQUEST,
-  CHATTING_LIST_SUCCESS,
-  CHATTING_LIST_FAILURE,
+  LOAD_CHATTING_LIST_REQUEST,
+  LOAD_CHATTING_LIST_SUCCESS,
+  LOAD_CHATTING_LIST_FAILURE,
   RoomListRequest,
   RoomListSuccess,
   RoomListFailure,
@@ -17,15 +17,15 @@ function roomListAPI(me_id: number) {
 function* roomList(action: RoomListRequest) {
   try {
     //const result = yield call(roomListAPI, action.data);
-    yield put({ type: CHATTING_LIST_SUCCESS, data: dumyRoomList }); //yield put(RoomListSuccess(result.data)) =>왜 안되는지 아시는분 ..
+    yield put({ type: LOAD_CHATTING_LIST_SUCCESS, data: dumyRoomList }); //yield put(RoomListSuccess(result.data)) =>왜 안되는지 아시는분 ..
   } catch (e) {
     console.error(e);
-    yield put({ type: CHATTING_LIST_FAILURE, error: e });
+    yield put({ type: LOAD_CHATTING_LIST_FAILURE, error: e });
   }
 }
 
 function* watchRoomList() {
-  yield takeLatest(CHATTING_LIST_REQUEST, roomList);
+  yield takeLatest(LOAD_CHATTING_LIST_REQUEST, roomList);
 }
 
 export default watchRoomList;
