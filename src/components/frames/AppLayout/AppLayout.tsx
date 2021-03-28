@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Menu from '../Menu';
 import MainLayout from './styled';
 
+import { useChatRoom } from '@src/hooks/useChatRoom';
 import { useRootState } from '@src/hooks/useRootState';
 import { roomListRequest } from '@src/reducers/chat/roomList';
 
@@ -13,10 +14,10 @@ interface AppLayouProps {
 
 const AppLayout: React.FC<AppLayouProps> = memo(({ children }) => {
   const dispatch = useDispatch();
-  const { roomListInfo } = useRootState((state) => state.chat); //menu에서 room에대한 정보를 요청할 때 필요
+  const roomListInfo = useChatRoom();
+
   const { info } = useRootState((state) => state.user); //현재 로그인 한 유저정보(채팅방리스트 컴포넌트로 옮길 예정)
 
-  console.log(roomListInfo);
   //테스트를 위해 작성(romeList 조회)
   useEffect(() => {
     //false
