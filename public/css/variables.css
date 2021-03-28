@@ -14,5 +14,7 @@
   --font-size-regular: 1.2em;
   --font-size-small: 1em;
   /* gap */
+  --gap-5: 5px;
   --gap-10: 10px;
+  --gap-20: 20px;
 }
