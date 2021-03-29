@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppProps, AppContext } from 'next/app';
+import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import theme from '@theme/.';

@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import AppLayout from '@src/components/frames/AppLayout';
 import { useRootState } from '@src/hooks/useRootState';
+import AppLayout from '@src/components/frames/AppLayout';
+import ChatRoom from '@src/components/Room/ChatRoomList';
+import ChatRoomHeader from '@src/components/Room/ChatRoomHeader';
 
 const Home = () => {
   const router = useRouter();
   const { info } = useRootState((state) => state.user); //현재 로그인 한 유저정보
 
-  //테스트를 위해 작성(romeList 조회)
   useEffect(() => {
     //false
     if (info) {
@@ -17,7 +18,12 @@ const Home = () => {
     }
   }, [info]);
 
-  return <AppLayout>testCode</AppLayout>;
+  return (
+    <AppLayout>
+      <ChatRoomHeader />
+      <ChatRoom />
+    </AppLayout>
+  );
 };
 
 export default Home;

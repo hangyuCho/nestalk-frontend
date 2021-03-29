@@ -1,6 +1,6 @@
 import produce from 'immer';
 import { RoomListData } from '@src/types/chatting';
-import { chatRoomType, CHATTING_ROOM_LIST_SUBMIT, CHATTING_ROOM_ADD_SUBMIT } from '../loadingType';
+import { chatRoomType, CHATTING_ROOM_LIST_SUBMIT, CHATTING_ROOM_ADD_SUBMIT } from '@reducers/loadingType';
 import {
   RoomList,
   LOAD_CHATTING_LIST_REQUEST,
