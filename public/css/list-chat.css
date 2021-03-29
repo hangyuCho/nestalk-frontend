@@ -9,9 +9,41 @@ body {
 }
 
 .container{
+  display: flex;
   min-width: 300px;
   max-width: 650px;
   margin: 0 auto;
+}
+
+/* Navigation */
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  padding: 20px var(--gap-10);
+  background-color: var(--secondary-color);
+}
+
+.nav-tab__main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-tab__main button:first-child{
+  margin-bottom: 25px;
+}
+
+
+/* List chat */
+.chat-list{
+  flex: 1;
 }
 
 /* Screen Header */
@@ -22,7 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px var(--gap-10);
+  padding: 20px var(--gap-10) var(--gap-10);
   background-color: var(--primary-color);
 }
 
@@ -31,29 +63,12 @@ body {
   font-weight: 600;
 }
 
-.screen-header__icon {
+.screen-header__icon:last-child {
   margin-left: var(--gap-10);
 }
 
 .screen-header__icon img {
   width: 20px;
-}
-
-/* Navigation */
-.nav-list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 12px;
-  background-color: var(--secondary-color);
-}
-
-.nav__button {
-  position: relative;
 }
 
 
@@ -77,11 +92,52 @@ body {
 }
 
 .user-chat__photo,.user-chat__group {
-  width: 50px;
-  height: 50px;
-  border-radius: 20px;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
   margin-right: var(--gap-10);
-  background-color: var(--white-color);
+}
+
+/* Group chat(3명) */
+.user-chat__photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+
+/* Group chat(3명) */
+.user-chat__group--3 .group,
+.user-chat__group--4 .group{
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+
+.user-chat__group--3 .group:first-child{
+  top: 5px;
+}
+.user-chat__group--3 .group:last-child{
+  top: 20px;
+  left: 20px;
+}
+
+/* Group chat(4명) */
+.user-chat__group--4 .group:first-child{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-chat__group--4 .group:nth-child(2){
+  top: 20px;
+}
+.user-chat__group--4 .group:last-child{
+  top: 20px;
+  left: 20px;
 }
 
 /* Group chat */
@@ -92,11 +148,15 @@ body {
   background-color: transparent;
 }
 
-.group{
-  margin-right: 1px;
-  width: 22px;
-  height: 22px;
-  border-radius: 9px;
+.user-chat__group .group{
+  margin-right: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.user-chat__group .group:nth-child(even){
+  margin-right: 0;
 }
 
 .user-chat__group--num{
